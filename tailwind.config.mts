@@ -1,9 +1,10 @@
-// DONE REVIEWING: GITHUB COMMIT
-/** @type {import('tailwindcss').Config} */
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
+import typographyPlugin from "@tailwindcss/typography"
+import {type Config} from "tailwindcss"
+import tailwindCSSAnimate from "tailwindcss-animate"
+import typographyStyles from "./styles/typography"
 
-const tailwindCSSAnimate = require("tailwindcss-animate")
-
-module.exports = {
+export default {
   darkMode: ["class"],
   content: [
     "./app/**/*.{ts,tsx,js,jsx}",
@@ -134,15 +135,15 @@ module.exports = {
       "xl-9": ["8rem", "1"]
     },
     fontWeight: {
-      "thin": 100,
-      "extra-light": 200,
-      "light": 300,
-      "normal": 400,
-      "medium": 500,
-      "semi-bold": 600,
-      "bold": 700,
-      "extra-bold": 800,
-      "black": 900
+      "thin": "100",
+      "extra-light": "200",
+      "light": "300",
+      "normal": "400",
+      "medium": "500",
+      "semi-bold": "600",
+      "bold": "700",
+      "extra-bold": "800",
+      "black": "900"
     },
     borderRadius: {
       "none": "0rem",
@@ -225,7 +226,8 @@ module.exports = {
       "xl": "1.5rem",
       "xl-2": "2.5rem",
       "xl-3": "3.75rem"
-    }
+    },
+    typography: typographyStyles
   },
-  plugins: [tailwindCSSAnimate]
-}
+  plugins: [typographyPlugin, tailwindCSSAnimate]
+} satisfies Config
