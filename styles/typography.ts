@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 import {type PluginUtils} from "tailwindcss/types/config"
 
 const typographyStyles = function typographyStyles({theme}: PluginUtils) {
@@ -24,6 +24,29 @@ const typographyStyles = function typographyStyles({theme}: PluginUtils) {
         "--tw-prose-pre-border": "var(--tw-prose-invert-pre-border)",
         "--tw-prose-th-borders": "var(--tw-prose-invert-th-borders)",
         "--tw-prose-td-borders": "var(--tw-prose-invert-td-borders)"
+      }
+    },
+    DEFAULT: {
+      css: {
+        "--tw-prose-body": theme("colors.zinc.500"),
+        "--tw-prose-headings": theme("colors.zinc.950"),
+        "--tw-prose-links": theme("colors.red.500"),
+        "--tw-prose-links-hover": theme("colors.red.600"),
+        "--tw-prose-underline": theme("colors.red.500 / 0.2"),
+        "--tw-prose-underline-hover": theme("colors.red.500"),
+        "--tw-prose-bold": theme("colors.zinc.950"),
+        "--tw-prose-counters": theme("colors.zinc.950"),
+        "--tw-prose-bullets": theme("colors.zinc.950"),
+        "--tw-prose-hr": theme("colors.zinc.100"),
+        "--tw-prose-quote-borders": theme("colors.zinc.200"),
+        "--tw-prose-captions": theme("colors.zinc.400"),
+        "--tw-prose-code": theme("colors.zinc.700"),
+        "--tw-prose-code-bg": theme("colors.zinc.300 / 0.2"),
+        "--tw-prose-pre-code": theme("colors.zinc.100"),
+        "--tw-prose-pre-bg": theme("colors.zinc.950"),
+        "--tw-prose-pre-border": "transparent",
+        "--tw-prose-th-borders": theme("colors.zinc.200"),
+        "--tw-prose-td-borders": theme("colors.zinc.100")
       }
     }
   }
