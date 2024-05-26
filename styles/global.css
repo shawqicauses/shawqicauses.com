@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 1️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,7 +26,7 @@
     --accent-foreground: var(--background-layer-2);
 
     --muted: theme(colors.zinc.100);
-    --muted-foreground: theme(colors.zinc.500);
+    --muted-foreground: theme(colors.zinc.600);
 
     /* COMPONENTS */
     --card: var(--background-layer-2);

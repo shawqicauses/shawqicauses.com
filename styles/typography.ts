@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 import {type PluginUtils} from "tailwindcss/types/config"
 
 const typographyStyles = function typographyStyles({theme}: PluginUtils) {
@@ -28,7 +28,7 @@ const typographyStyles = function typographyStyles({theme}: PluginUtils) {
     },
     DEFAULT: {
       css: {
-        "--tw-prose-body": theme("colors.zinc.500"),
+        "--tw-prose-body": theme("colors.zinc.600"),
         "--tw-prose-headings": theme("colors.zinc.950"),
         "--tw-prose-links": theme("colors.red.500"),
         "--tw-prose-links-hover": theme("colors.red.600"),
@@ -46,7 +46,28 @@ const typographyStyles = function typographyStyles({theme}: PluginUtils) {
         "--tw-prose-pre-bg": theme("colors.zinc.950"),
         "--tw-prose-pre-border": "transparent",
         "--tw-prose-th-borders": theme("colors.zinc.200"),
-        "--tw-prose-td-borders": theme("colors.zinc.100")
+        "--tw-prose-td-borders": theme("colors.zinc.100"),
+
+        // INVERT
+        "--tw-prose-invert-body": theme("colors.zinc.400"),
+        "--tw-prose-invert-headings": theme("colors.zinc.200"),
+        "--tw-prose-invert-links": theme("colors.red.400"),
+        "--tw-prose-invert-links-hover": theme("colors.red.400"),
+        "--tw-prose-invert-underline": theme("colors.red.400 / 0.3"),
+        "--tw-prose-invert-underline-hover": theme("colors.red.400"),
+        "--tw-prose-invert-bold": theme("colors.zinc.200"),
+        "--tw-prose-invert-counters": theme("colors.zinc.200"),
+        "--tw-prose-invert-bullets": theme("colors.zinc.200"),
+        "--tw-prose-invert-hr": theme("colors.zinc.700 / 0.4"),
+        "--tw-prose-invert-quote-borders": theme("colors.zinc.500"),
+        "--tw-prose-invert-captions": theme("colors.zinc.500"),
+        "--tw-prose-invert-code": theme("colors.zinc.300"),
+        "--tw-prose-invert-code-bg": theme("colors.zinc.200 / 0.05"),
+        "--tw-prose-invert-pre-code": theme("colors.zinc.100"),
+        "--tw-prose-invert-pre-bg": "rgb(0 0 0 / 0.4)",
+        "--tw-prose-invert-pre-border": theme("colors.zinc.200 / 0.1"),
+        "--tw-prose-invert-th-borders": theme("colors.zinc.700"),
+        "--tw-prose-invert-td-borders": theme("colors.zinc.800")
       }
     }
   }
