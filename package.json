@@ -1,8 +1,8 @@
 {
-  "reviewed": "true",
+  "reviewed": "true 1️⃣",
   "version": "1.0.0",
-  "name": "shawqicauses-starter-template-next",
-  "description": "A starter template for Next.JS projects includes every package that I need/use to build them. Developed by @shawqicauses.",
+  "name": "shawqicauses.com",
+  "description": "Shawqi Hatem Portfolio (shawqicauses.com) - Built using Next.JS, TypeScript and Tailwind CSS. Developed by @shawqicauses.",
   "author": "shawqicauses <shawqicauses@outlook.com>",
   "license": "ISC",
   "private": true,
