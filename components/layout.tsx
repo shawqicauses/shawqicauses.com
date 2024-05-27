@@ -1,5 +1,6 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 import {Fragment, PropsWithChildren} from "react"
+import Header from "./header"
 
 const Layout = function Layout({children}: PropsWithChildren) {
   return (
@@ -10,7 +11,7 @@ const Layout = function Layout({children}: PropsWithChildren) {
         </div>
       </div>
       <div className="relative flex w-full flex-col">
-        <header>Header</header>
+        <Header />
         {children}
         <footer>Footer</footer>
       </div>
