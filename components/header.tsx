@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 
 import Link from "next/link"
 import {usePathname} from "next/navigation"
@@ -30,11 +30,23 @@ const NavigationItem = function NavigationItem({href, children}: NavigationItemP
   )
 }
 
+const navigations = [
+  {name: "About", href: "/about"},
+  {name: "Articles", href: "/articles"},
+  {name: "Projects", href: "/projects"},
+  {name: "Speakings", href: "/speakings"},
+  {name: "Uses", href: "/uses"}
+]
+
 const DesktopNavigation = function DesktopNavigation(props: ComponentPropsWithoutRef<"nav">) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavigationItem href="/about">About</NavigationItem>
+        {navigations.map((element) => (
+          <NavigationItem key={element.href} href={element.href}>
+            {element.name}
+          </NavigationItem>
+        ))}
       </ul>
     </nav>
   )
