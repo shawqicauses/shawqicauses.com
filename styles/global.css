@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 3️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +11,7 @@
     --foreground: theme(colors.zinc.950);
 
     /* DIVIDERS */
+    --border-light: theme(colors.zinc.100);
     --border: theme(colors.zinc.200);
     --ring: var(--foreground);
     --input: var(--border);
@@ -38,19 +39,10 @@
 
   .dark {
     --background: theme(colors.zinc.950);
-    --background-layer-2: theme(colors.zinc.900);
+    --background-layer-2: theme(colors.black);
     --foreground: theme(colors.white);
+    --border-light: theme(colors.zinc.900);
     --border: theme(colors.zinc.800);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 }
 
@@ -64,7 +56,7 @@
   }
 
   .shc-card {
-    @apply border-border bg-background-layer-2 rounded-md border px-3 py-2;
+    @apply rounded-md border border-border bg-background-layer-2 px-3 py-2;
   }
 
   .shc-form-disabled-style {
@@ -72,11 +64,11 @@
   }
 
   .shc-form-focus-style {
-    @apply ring-offset-background focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
   }
 
   .shc-input-typography-style {
-    @apply placeholder:text-muted-foreground text-sm font-medium leading-normal placeholder:font-normal;
+    @apply text-sm font-medium leading-normal placeholder:font-normal placeholder:text-muted-foreground;
   }
 
   .shc-input-file-style {
