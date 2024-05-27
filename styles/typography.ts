@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 7️⃣
+// DONE REVIEWING: GITHUB COMMIT 8️⃣
 import {type PluginUtils} from "tailwindcss/types/config"
 
 const typographyStyles = function typographyStyles({theme}: PluginUtils) {
@@ -247,6 +247,69 @@ const typographyStyles = function typographyStyles({theme}: PluginUtils) {
             marginLeft: `calc(${theme("spacing.12")} * -1)`,
             marginRight: `calc(${theme("spacing.12")} * -1)`
           }
+        },
+
+        // TABLES
+        "table": {
+          width: "100%",
+          tableLayout: "auto",
+          fontSize: theme("fontSize.sm")[0],
+          textAlight: "left"
+        },
+
+        "thead": {
+          borderBottomWidth: "0.0625rem",
+          borderBottomColor: "var(--tw-prose-th-borders)"
+        },
+
+        "thead th": {
+          fontWeight: theme("fontWeight.semi-bold"),
+          verticalAlign: "bottom",
+          color: "var(--tw-prose-headings)",
+          paddingBottom: theme("spacing.2")
+        },
+
+        "thead th:not(:first-child)": {
+          paddingLeft: theme("spacing.2")
+        },
+
+        "thead th:not(:last-child)": {
+          paddingRight: theme("spacing.2")
+        },
+
+        "tbody tr": {
+          borderBottomWidth: "0.0625rem",
+          borderBottomColor: "var(--tw-prose-td-borders)"
+        },
+
+        "tbody tr:last-child": {
+          borderBottomWidth: 0
+        },
+
+        "tbody td": {
+          verticalAlign: "baseline"
+        },
+
+        "tfoot": {
+          borderTopWidth: "0.0625rem",
+          borderTopColor: "var(--tw-prose-th-borders)"
+        },
+
+        "tfoot td": {
+          verticalAlign: "top"
+        },
+
+        ":is(tbody, tfoot) td": {
+          paddingTop: theme("spacing.2"),
+          paddingBottom: theme("spacing.2")
+        },
+
+        ":is(tbody, tfoot) td:not(:first-child)": {
+          paddingLeft: theme("spacing.2")
+        },
+
+        ":is(tbody, tfoot) td:not(:last-child)": {
+          paddingRight: theme("spacing.2")
         }
       }
     }
