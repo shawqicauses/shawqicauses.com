@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 5️⃣
+// DONE REVIEWING: GITHUB COMMIT 6️⃣
 import {type PluginUtils} from "tailwindcss/types/config"
 
 const typographyStyles = function typographyStyles({theme}: PluginUtils) {
@@ -212,6 +212,29 @@ const typographyStyles = function typographyStyles({theme}: PluginUtils) {
         "li :is(li, p)": {
           marginTop: theme("spacing.3"),
           marginBottom: theme("spacing.3")
+        },
+
+        // CODE BLOCKS
+        "pre": {
+          fontSize: theme("fontSize.sm")[0],
+          fontWeight: theme("fontWeight.medium"),
+          color: "var(--tw-prose-pre-code)",
+          backgroundColor: "var(--tw-prose-pre-bg)",
+          padding: theme("spacing.8"),
+          border: "0.0625rem solid",
+          borderColor: "var(--tw-prose-pre-border)",
+          borderRadius: theme("borderRadius.xl-3"),
+          overflowX: "auto"
+        },
+
+        "pre code": {
+          display: "inline",
+          fontSize: "inherit",
+          fontWeight: "inherit",
+          color: "inherit",
+          backgroundColor: "transparent",
+          padding: 0,
+          borderRadius: 0
         }
       }
     }
