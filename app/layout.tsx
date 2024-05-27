@@ -1,15 +1,9 @@
-// DONE REVIEWING: GITHUB COMMIT 3️⃣
+// DONE REVIEWING: GITHUB COMMIT 4️⃣
 import type {Metadata} from "next"
-import {Poppins} from "next/font/google"
 import {PropsWithChildren} from "react"
 import {Layout} from "../components/index"
 import "../styles/global.css"
 import Providers from "./providers"
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
-})
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +22,7 @@ export const metadata: Metadata = {
 const RootLayout = function RootLayout({children}: PropsWithChildren) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className={`${poppins.className} flex h-full bg-background-layer-2`}>
+      <body className="flex h-full bg-background-layer-2">
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>
