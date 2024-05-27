@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 4️⃣
+// DONE REVIEWING: GITHUB COMMIT 5️⃣
 import {type PluginUtils} from "tailwindcss/types/config"
 
 const typographyStyles = function typographyStyles({theme}: PluginUtils) {
@@ -150,6 +150,68 @@ const typographyStyles = function typographyStyles({theme}: PluginUtils) {
 
         "a code": {
           color: "inherit"
+        },
+
+        // QUOTES
+        "blockquote": {
+          fontStyle: "italic",
+          paddingLeft: theme("spacing.6"),
+          borderLeftWidth: theme("borderWidth.2"),
+          borderLeftColor: "var(--tw-prose-quote-borders)"
+        },
+
+        // FIGURES
+        "figcaption": {
+          fontSize: theme("fontSize.sm")[0],
+          lineHeight: theme("lineHeight.6"),
+          color: "var(--tw-prose-captions)",
+          marginTop: theme("spacing.3")
+        },
+
+        "figcaption > p": {
+          margin: 0
+        },
+
+        // LISTS
+        "ul": {
+          listStyleType: "disc"
+        },
+
+        "ol": {
+          listStyleType: "decimal"
+        },
+
+        "ul, ol": {
+          paddingLeft: theme("spacing.6")
+        },
+
+        "li": {
+          paddingLeft: theme("spacing[3.5]"),
+          marginTop: theme("spacing.6"),
+          marginBottom: theme("spacing.6")
+        },
+
+        "li::marker": {
+          fontSize: theme("fontSize.sm")[0],
+          fontWeight: theme("fontWeight.semi-bold")
+        },
+
+        "ul > li::marker": {
+          color: "var(--tw-prose-bullets)"
+        },
+
+        "ol > li::marker": {
+          color: "var(--tw-prose-counters)"
+        },
+
+        "li :is(ul, ol)": {
+          marginTop: theme("spacing.4"),
+          marginBottom: theme("spacing.4")
+        },
+
+        "li :is(li, p)": {
+          marginTop: theme("spacing.3"),
+          marginBottom: theme("spacing.3")
         }
       }
     }
