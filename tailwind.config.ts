@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 import typographyPlugin from "@tailwindcss/typography"
 import {type Config} from "tailwindcss"
 import tailwindCSSAnimate from "tailwindcss-animate"
@@ -33,8 +33,16 @@ export default {
         "border-light": "var(--border-light)",
         "ring": "var(--ring)",
         "input": "var(--input)",
-        "primary": {DEFAULT: "var(--primary)", foreground: "var(--primary-foreground)"},
-        "secondary": {DEFAULT: "var(--secondary)", foreground: "var(--secondary-foreground)"},
+        "primary": {
+          DEFAULT: "var(--primary)",
+          hover: "var(--primary-hover)",
+          foreground: "var(--primary-foreground)"
+        },
+        "secondary": {
+          DEFAULT: "var(--secondary)",
+          hover: "var(--secondary-hover)",
+          foreground: "var(--secondary-foreground)"
+        },
         "accent": {DEFAULT: "var(--accent)", foreground: "var(--accent-foreground)"},
         "muted": {DEFAULT: "var(--muted)", foreground: "var(--muted-foreground)"},
         "card": {DEFAULT: "var(--card)", foreground: "var(--card-foreground)"},
