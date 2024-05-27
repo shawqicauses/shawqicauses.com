@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 6️⃣
+// DONE REVIEWING: GITHUB COMMIT 7️⃣
 import {type PluginUtils} from "tailwindcss/types/config"
 
 const typographyStyles = function typographyStyles({theme}: PluginUtils) {
@@ -235,6 +235,18 @@ const typographyStyles = function typographyStyles({theme}: PluginUtils) {
           backgroundColor: "transparent",
           padding: 0,
           borderRadius: 0
+        },
+
+        // HORIZONTAL RULES
+        "hr": {
+          "borderTopWidth": "0.0625rem",
+          "borderColor": "var(--tw-prose-hr)",
+          "marginTop": theme("spacing.20"),
+          "marginBottom": theme("spacing.20"),
+          "screen lg": {
+            marginLeft: `calc(${theme("spacing.12")} * -1)`,
+            marginRight: `calc(${theme("spacing.12")} * -1)`
+          }
         }
       }
     }
