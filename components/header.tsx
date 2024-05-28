@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 4️⃣
+// DONE REVIEWING: GITHUB COMMIT 5️⃣
 
 import {
   Popover,
@@ -57,6 +57,16 @@ const CloseIcon = function CloseIcon(props: ComponentPropsWithoutRef<"svg">) {
   )
 }
 
+const MobileNavigationItem = function MobileNavigationItem({href, children}: NavigationItemProps) {
+  return (
+    <li>
+      <PopoverButton as={Link} href={href} className="block py-2">
+        {children}
+      </PopoverButton>
+    </li>
+  )
+}
+
 const MobileNavigation = function MobileNavigation(
   props: ComponentPropsWithoutRef<typeof Popover>
 ) {
@@ -94,7 +104,11 @@ const MobileNavigation = function MobileNavigation(
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                Navigation Item
+                {navigations.map((element) => (
+                  <MobileNavigationItem key={element.href} href={element.href}>
+                    {element.name}
+                  </MobileNavigationItem>
+                ))}
               </ul>
             </nav>
           </PopoverPanel>
