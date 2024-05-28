@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 6️⃣
+// DONE REVIEWING: GITHUB COMMIT 7️⃣
 
 import {
   Popover,
@@ -10,9 +10,10 @@ import {
   Transition,
   TransitionChild
 } from "@headlessui/react"
+import {useTheme} from "next-themes"
 import Link from "next/link"
 import {usePathname} from "next/navigation"
-import {ComponentPropsWithoutRef, PropsWithChildren} from "react"
+import {ComponentPropsWithoutRef, PropsWithChildren, useEffect, useState} from "react"
 import {cn} from "../lib/utils"
 
 interface NavigationItemProps extends PropsWithChildren {
@@ -184,10 +185,31 @@ const MoonIcon = function MoonIcon(props: ComponentPropsWithoutRef<"svg">) {
   )
 }
 
+const ThemeToggle = function ThemeToggle() {
+  const [mounted, setMounted] = useState(false)
+  const {resolvedTheme, setTheme} = useTheme()
+  const switchTheme = resolvedTheme === "dark" ? "light" : "dark"
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return (
+    <button
+      type="button"
+      aria-label={mounted ? `Switch to ${switchTheme} theme` : "Toggle Theme"}
+      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      onClick={() => setTheme(switchTheme)}>
+      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-primary-foreground [@media(prefers-color-scheme:dark)]:stroke-primary [@media(prefers-color-scheme:dark)]:group-hover:fill-primary-foreground [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-hover" />
+      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-red-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-primary" />
+    </button>
+  )
+}
+
 const Header = function Header() {
   return (
     <header>
-      <MobileNavigation />
+      <ThemeToggle />
     </header>
   )
 }
