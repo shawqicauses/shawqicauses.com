@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 7️⃣
+// DONE REVIEWING: GITHUB COMMIT 8️⃣
 
 import {
   Popover,
@@ -203,6 +203,22 @@ const ThemeToggle = function ThemeToggle() {
       <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-primary-foreground [@media(prefers-color-scheme:dark)]:stroke-primary [@media(prefers-color-scheme:dark)]:group-hover:fill-primary-foreground [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-hover" />
       <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-red-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-primary" />
     </button>
+  )
+}
+
+// AVATAR
+const AvatarContainer = function AvatarContainer({
+  className,
+  ...props
+}: ComponentPropsWithoutRef<"div">) {
+  return (
+    <div
+      className={cn(
+        className,
+        "h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10"
+      )}
+      {...props}
+    />
   )
 }
 
