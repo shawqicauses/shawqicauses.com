@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣5️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣6️⃣
 
 import {
   Popover,
@@ -341,7 +341,7 @@ const Header = function Header() {
       window.removeEventListener("scroll", updateStyles)
       window.removeEventListener("resize", updateStyles)
     }
-  })
+  }, [isHomePage])
 
   return (
     <header>
