@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
 import {cn} from "../lib/utils"
@@ -27,8 +27,17 @@ const ContainerInner = forwardRef<ElementRef<"div">, ComponentPropsWithoutRef<"d
 
 ContainerInner.displayName = "ContainerInner"
 
-const Container = function Container() {
-  return <div>Container</div>
-}
+const Container = forwardRef<
+  ElementRef<typeof ContainerOuter>,
+  ComponentPropsWithoutRef<typeof ContainerOuter>
+>(({children, ...props}, ref) => {
+  return (
+    <ContainerOuter ref={ref} {...props}>
+      <ContainerInner>{children}</ContainerInner>
+    </ContainerOuter>
+  )
+})
+
+Container.displayName = "Container"
 
 export default Container
