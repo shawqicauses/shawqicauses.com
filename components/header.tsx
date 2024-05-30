@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣7️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣8️⃣
 
 import {
   Popover,
@@ -380,6 +380,33 @@ const Header = function Header() {
           </Container>
         </Fragment>
       )}
+      <div
+        ref={headerRef}
+        className="top-0 z-10 h-16 py-6"
+        style={{position: "var(--header-position)" as CSSProperties["position"]}}>
+        <Container
+          className="top-[var(--header-top,theme(spacing.6))] w-full"
+          style={{position: "var(--header-inner-position)" as CSSProperties["position"]}}>
+          <div className="relative flex gap-4">
+            <div className="flex flex-1">
+              {!isHomePage && (
+                <AvatarContainer>
+                  <Avatar />
+                </AvatarContainer>
+              )}
+            </div>
+            <div className="flex flex-1 justify-end md:justify-center">
+              <MobileNavigation className="pointer-events-auto md:hidden" />
+              <DesktopNavigation className="pointer-events-auto hidden md:block" />
+            </div>
+            <div className="flex justify-end md:flex-1">
+              <div className="pointer-events-auto">
+                <ThemeToggle />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
     </header>
   )
 }
