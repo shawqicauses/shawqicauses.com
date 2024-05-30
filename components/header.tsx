@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣6️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣7️⃣
 
 import {
   Popover,
@@ -15,8 +15,10 @@ import Image from "next/image"
 import Link from "next/link"
 import {usePathname} from "next/navigation"
 import {
+  CSSProperties,
   ComponentPropsWithoutRef,
   ElementRef,
+  Fragment,
   PropsWithChildren,
   useEffect,
   useRef,
@@ -24,6 +26,7 @@ import {
 } from "react"
 import {clamp, cn} from "../lib/utils"
 import avatarImage from "../public/assets/images/thamanyah-avatar.webp"
+import {Container} from "./index"
 
 interface NavigationItemProps extends PropsWithChildren {
   href: string
@@ -344,10 +347,39 @@ const Header = function Header() {
   }, [isHomePage])
 
   return (
-    <header>
-      <AvatarContainer>
-        <Avatar />
-      </AvatarContainer>
+    <header
+      className="pointer-events-none relative z-50 flex flex-none flex-col"
+      style={{height: "var(--header-height", marginBottom: "var(--header-mb)"}}>
+      {isHomePage && (
+        <Fragment>
+          <div
+            ref={avatarRef}
+            className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
+          />
+          <Container
+            className="top-0 order-last -mb-3 pt-3"
+            style={{position: "var(--header-position)" as CSSProperties["position"]}}>
+            <div
+              className="top-[var(--avatar-top,theme(spacing.3))] w-full"
+              style={{position: "var(--header-inner-position)" as CSSProperties["position"]}}>
+              <div className="relative">
+                <AvatarContainer
+                  className="absolute left-0 top-3 origin-left transition-opacity"
+                  style={{
+                    opacity: "var(--avatar-border-opacity, 0)",
+                    transform: "var(--avatar-border-transform)"
+                  }}
+                />
+                <Avatar
+                  large
+                  className="block h-16 w-16 origin-left"
+                  style={{transform: "var(--avatar-image-transform)"}}
+                />
+              </div>
+            </div>
+          </Container>
+        </Fragment>
+      )}
     </header>
   )
 }
