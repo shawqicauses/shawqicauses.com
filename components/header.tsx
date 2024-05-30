@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 9️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣
 
 import {
   Popover,
@@ -14,7 +14,14 @@ import {useTheme} from "next-themes"
 import Image from "next/image"
 import Link from "next/link"
 import {usePathname} from "next/navigation"
-import {ComponentPropsWithoutRef, PropsWithChildren, useEffect, useState} from "react"
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  PropsWithChildren,
+  useEffect,
+  useRef,
+  useState
+} from "react"
 import {cn} from "../lib/utils"
 import avatarImage from "../public/assets/images/thamanyah-avatar.webp"
 
@@ -246,6 +253,21 @@ const Avatar = function Avatar({large = false, className, ...props}: AvatarProps
 }
 
 const Header = function Header() {
+  const isHomePage = usePathname() === "/"
+  const headerRef = useRef<ElementRef<"div">>(null)
+  const avatarRef = useRef<ElementRef<"div">>(null)
+  const isInitial = useRef(true)
+
+  useEffect(() => {
+    const setProperty = function setProperty(property: string, value: string) {
+      document.documentElement.style.setProperty(property, value)
+    }
+
+    const removeProperty = function removeProperty(property: string) {
+      document.documentElement.style.removeProperty(property)
+    }
+  })
+
   return (
     <header>
       <AvatarContainer>
