@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣2️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣3️⃣
 
 import {
   Popover,
@@ -325,6 +325,12 @@ const Header = function Header() {
 
       setProperty("--avatar-border-transform", borderTransform)
       setProperty("--avatar-border-opacity", scale === toScale ? "1" : "0")
+    }
+
+    const updateStyles = function updateStyles() {
+      updateHeaderStyles()
+      updateAvatarStyles()
+      isInitial.current = false
     }
   })
 
