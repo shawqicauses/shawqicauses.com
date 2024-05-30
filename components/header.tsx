@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 8️⃣
+// DONE REVIEWING: GITHUB COMMIT 9️⃣
 
 import {
   Popover,
@@ -11,10 +11,12 @@ import {
   TransitionChild
 } from "@headlessui/react"
 import {useTheme} from "next-themes"
+import Image from "next/image"
 import Link from "next/link"
 import {usePathname} from "next/navigation"
 import {ComponentPropsWithoutRef, PropsWithChildren, useEffect, useState} from "react"
 import {cn} from "../lib/utils"
+import avatarImage from "../public/assets/images/thamanyah-avatar.webp"
 
 interface NavigationItemProps extends PropsWithChildren {
   href: string
@@ -222,10 +224,33 @@ const AvatarContainer = function AvatarContainer({
   )
 }
 
+type AvatarProps = Omit<ComponentPropsWithoutRef<typeof Link>, "href"> & {
+  large?: boolean
+}
+
+const Avatar = function Avatar({large = false, className, ...props}: AvatarProps) {
+  return (
+    <Link href="/" aria-label="Home" className={cn(className, "pointer-events-auto")} {...props}>
+      <Image
+        src={avatarImage}
+        alt="Avatar"
+        sizes={large ? "4rem" : "2.25rem"}
+        priority
+        className={cn(
+          "rounded-full bg-zinc-100 object-cover dark:bg-zinc-800",
+          large ? "h-16 w-16" : "h-9 w-9"
+        )}
+      />
+    </Link>
+  )
+}
+
 const Header = function Header() {
   return (
     <header>
-      <ThemeToggle />
+      <AvatarContainer>
+        <Avatar />
+      </AvatarContainer>
     </header>
   )
 }
