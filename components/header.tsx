@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣1️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣2️⃣
 
 import {
   Popover,
@@ -300,6 +300,31 @@ const Header = function Header() {
         setProperty("--header-top", `${0}px`)
         setProperty("--avatar-top", `${0}px`)
       }
+    }
+
+    const updateAvatarStyles = function updateAvatarStyles() {
+      if (!isHomePage) return
+
+      const fromScale = 1
+      const toScale = 36 / 64
+      const fromX = 0
+      const toX = 2 / 16
+
+      const scrollY = downDelay - window.scrollY
+      let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale
+      scale = clamp(scale, fromScale, toScale)
+
+      let x = (scrollY * (fromX - toX)) / downDelay + toX
+      x = clamp(x, fromX, toX)
+
+      setProperty("--avatar-image-transform", `translate3d(${x}rem, 0, 0) scale(${scale})`)
+
+      const borderScale = 1 / (toScale / scale)
+      const borderX = (-toX + x) * borderScale
+      const borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
+
+      setProperty("--avatar-border-transform", borderTransform)
+      setProperty("--avatar-border-opacity", scale === toScale ? "1" : "0")
     }
   })
 
