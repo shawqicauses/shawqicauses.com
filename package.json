@@ -1,5 +1,5 @@
 {
-  "reviewed": "true 4️⃣",
+  "reviewed": "true 5️⃣",
   "version": "1.0.0",
   "name": "shawqicauses.com",
   "description": "Shawqi Hatem Portfolio (shawqicauses.com) - Built using Next.JS, TypeScript and Tailwind CSS. Developed by @shawqicauses.",
@@ -15,6 +15,7 @@
   "dependencies": {
     "@headlessui/react": "2.0.4",
     "@hookform/resolvers": "3.4.0",
+    "@radix-ui/react-alert-dialog": "1.0.5",
     "@radix-ui/react-label": "2.0.2",
     "@radix-ui/react-slot": "1.0.2",
     "@tailwindcss/typography": "0.5.13",
