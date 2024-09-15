@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 4️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT - 05 */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -134,6 +134,6 @@
   }
 
   .shc-transition {
-    @apply transition-colors duration-300 ease-linear;
+    @apply transition duration-150 ease-linear;
   }
 }
